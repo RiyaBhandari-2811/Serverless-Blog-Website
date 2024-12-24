@@ -1,0 +1,196 @@
+.about {
+  font-family: $font-family-lora;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: $primary-color;
+    font-family: $font-family-sans;
+
+    span {
+      font-size: 1.1rem;
+      font-weight: $font-weight-light;
+      letter-spacing: 0.2rem;
+      color: $grey-color;
+    }
+
+    h2 {
+      color: $secondary-color;
+      font-size: 3rem;
+      font-weight: $font-weight-medium;
+      letter-spacing: 0.5rem;
+    }
+
+    .downloadCV {
+      font-size: medium;
+      margin-top: 5rem;
+      border-radius: 50px;
+      padding: 10px 50px;
+    }
+  }
+
+  .summary {
+    position: relative;
+    top: 30px;
+
+    .summaryHeader {
+      letter-spacing: 0.1rem;
+      font-size: 2rem;
+      font-weight: $font-weight-medium;
+      color: $primary-color;
+      margin-left: 4px;
+    }
+
+    .summaryContent {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      img {
+        width: 500px;
+        height: 400px;
+        object-fit: contain;
+      }
+
+      .summaryText {
+        font-size: 1.2rem;
+        font-weight: $font-weight-light;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .workHistory {
+    position: relative;
+    top: 3rem;
+
+    .workHistoryHeader {
+      letter-spacing: 0.1rem;
+      font-size: 2rem;
+      font-weight: $font-weight-medium;
+      color: $primary-color;
+    }
+
+    .companyInfo {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        margin: 2px;
+      }
+
+      .companyName {
+        font-size: 1.3rem;
+        font-weight: $font-weight-medium;
+      }
+
+      .role {
+        font-size: 1rem;
+        font-weight: $font-weight-light;
+      }
+
+      .year {
+        font-size: 0.9rem;
+        font-weight: $font-weight-light;
+      }
+    }
+  }
+
+  @include respond(md) {
+    .header {
+      height: 50vh;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      span {
+        font-size: 0.9rem;
+      }
+
+      .downloadCV {
+        margin-top: 2rem;
+        font-size: small;
+        padding: 8px 40px;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
+      .summary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        p:first-of-type {
+          letter-spacing: 0.1rem;
+          font-size: 1.5rem;
+        }
+
+        .summaryContent {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+
+          img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+          }
+
+          p {
+            font-size: 1rem;
+            margin: 0px 25px;
+          }
+        }
+      }
+
+      .workHistory {
+        display: flex;
+        flex-direction: column;
+
+        .workHistoryHeader {
+          text-align: center;
+          letter-spacing: 0.1rem;
+          font-size: 1.5rem;
+        }
+
+        .companyInfo {
+          display: flex;
+          flex-direction: column;
+
+          p {
+            margin: 2px;
+          }
+
+          .companyName {
+            font-size: 1.3rem;
+            font-weight: $font-weight-medium;
+          }
+
+          .role {
+            font-size: 1rem;
+            font-weight: $font-weight-light;
+          }
+
+          .year {
+            font-size: 0.9rem;
+            font-weight: $font-weight-light;
+          }
+        }
+      }
+    }
+  }
+}
