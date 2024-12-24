@@ -7,7 +7,7 @@ const About = () => {
         <span>Hi, I'm</span>
         <h2>Manoj Aher</h2>
         <span>Bengaluru, KA</span>
-        <Button className="downloadCV" variant="contained" size="medium">
+        <Button className="downloadCV" variant="contained" size="medium" href="/assets/pdf/samplePdf.pdf" download="samplePdf.pdf">
           Download CV
         </Button>
       </div>
@@ -16,7 +16,7 @@ const About = () => {
           <p className="summaryHeader">Summary</p>
           <div className="summaryContent">
             <img
-              src="/images/ProfilePicture.jpg"
+              src="/assets/images/ProfilePicture.jpg"
               alt="Manoj Aher"
               loading="lazy"
             />
