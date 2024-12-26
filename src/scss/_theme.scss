@@ -1,0 +1,24 @@
+body.light-mode {
+  --primary: #{$primary-light};
+  --secondary: #{$secondary-light};
+  --tertiary: #{$tertiary-light};
+  --quaternary: #{$quaternary-light};
+  --background: #{$background-light};
+  --text-primary: #{$text-primary-light};
+  --text-secondary: #{$text-secondary-light};
+}
+
+body.dark-mode {
+  --primary: #{$primary-dark};
+  --secondary: #{$secondary-dark};
+  --tertiary: #{$tertiary-dark};
+  --quaternary: #{$quaternary-dark};
+  --background: #{$background-dark};
+  --text-primary: #{$text-primary-dark};
+  --text-secondary: #{$text-secondary-dark};
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+}

@@ -1,8 +1,10 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import "@scss/index.scss";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home";
+import { ThemeProvider } from "@mui/material";
+import { darkTheme, lightTheme } from "./utils/theme";
 const About = lazy(() => import("./pages/About"));
 const Articles = lazy(() => import("./pages/Articles"));
 const Tags = lazy(() => import("./pages/Tags"));
@@ -19,6 +21,14 @@ function App(): JSX.Element {
     contact: Contact,
   };
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.className = isDarkMode ? 'light-mode' : 'dark-mode';
+  };
+  
+
   const TagsPage = () => {
     // Get the dynamic tag from the URL
     const { dynamicSelectedTag } = useParams();
@@ -31,20 +41,27 @@ function App(): JSX.Element {
   };
 
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          {Object.keys(componentMap).map((key) => {
-            const Component = componentMap[key];
-            return <Route key={key} path={`/${key}`} element={<Component />} />;
-          })}
-          <Route path="/" element={<Home />} />
-          <Route path="/tags/:dynamicSelectedTag" Component={TagsPage} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <button onClick={toggleTheme}>
+        Toggle to {isDarkMode ? 'Light' : 'Dark'} Mode
+      </button>
+      <BrowserRouter>
+        <NavBar />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {Object.keys(componentMap).map((key) => {
+              const Component = componentMap[key];
+              return (
+                <Route key={key} path={`/${key}`} element={<Component />} />
+              );
+            })}
+            <Route path="/" element={<Home />} />
+            <Route path="/tags/:dynamicSelectedTag" Component={TagsPage} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
