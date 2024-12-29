@@ -1,31 +1,27 @@
-import {
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText
-} from "@mui/material";
+import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import useNavigateTo from "../../hooks/useNavigateTo";
 import { FC } from "react";
-
-const navItems: string[] = ["About", "Articles", "Tags", "Contact"];
+import { navItems } from "@/constants";
 
 const NavItems: FC = () => {
   const navigate = useNavigateTo();
 
   return (
-    <List sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
+    <List className="navItemList">
       {navItems.map((item) => (
         <ListItem key={item} disablePadding>
           <ListItemButton
-            sx={{ textAlign: "center" }}
-            onClick={() => navigate(item)}
+            onClick={() => {
+              navigate(item);
+              console.log(window.location.pathname.split("/")[1], item);
+            }}
+            className={
+              window.location.pathname.split("/")[1] === item.toLowerCase()
+                ? "active"
+                : ""
+            }
           >
-            <ListItemText
-              primary={item}
-              slotProps={{
-                primary: { fontFamily: "Lora", fontWeight: 400 },
-              }}
-            />
+            <ListItemText sx={{textAlign: {sm: 'center'}}} className="navItemText" primary={item} />
           </ListItemButton>
         </ListItem>
       ))}

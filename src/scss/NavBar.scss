@@ -1,0 +1,50 @@
+.navbar {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      justify-content: flex-start;
+      align-items: center;
+      .logoText {
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+    .navItemList {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .navItemText {
+        text-align: center;
+        font-family: $font-family-lora;
+        font-weight: $font-weight-regular;
+        color: var(--text-primary);
+      }
+      .active {
+        text-decoration: underline;
+      }
+    }
+
+    .drawer {
+      display: none;
+    }
+  }
+}
+
+@include respond(sm) {
+  .navbar {
+    .container {
+      .logo {
+        justify-content: center;
+        flex-grow: 1;
+      }
+
+      .menuBtn {
+        display: flex;
+        margin-left: auto;
+      }
+    }
+  }
+}

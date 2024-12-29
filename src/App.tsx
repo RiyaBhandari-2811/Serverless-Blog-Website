@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState } from "react";
 import "@scss/index.scss";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/navbar/NavBar";
 import Home from "./pages/Home";
 import { ThemeProvider } from "@mui/material";
 import { darkTheme, lightTheme } from "./utils/theme";
@@ -25,9 +25,8 @@ function App(): JSX.Element {
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-    document.body.className = isDarkMode ? 'light-mode' : 'dark-mode';
+    document.body.className = isDarkMode ? "light-mode" : "dark-mode";
   };
-  
 
   const TagsPage = () => {
     // Get the dynamic tag from the URL
@@ -42,11 +41,8 @@ function App(): JSX.Element {
 
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <button onClick={toggleTheme}>
-        Toggle to {isDarkMode ? 'Light' : 'Dark'} Mode
-      </button>
       <BrowserRouter>
-        <NavBar />
+        <NavBar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             {Object.keys(componentMap).map((key) => {

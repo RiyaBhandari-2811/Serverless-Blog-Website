@@ -1,19 +1,12 @@
 import React from "react";
-import PortraitCard from "../components/Card/PortraitCard";
+import PortraitCard from "../components/card/PortraitCard";
 import { Container, Typography } from "@mui/material";
+import Banner from "@/components/banner/Banner";
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <Typography
-        variant="h6"
-        fontFamily={"Lora"}
-        color="inherit"
-        fontWeight={700}
-      >
-        Swift UI
-      </Typography>
-      <PortraitCard />
+      <Banner />
     </Container>
   );
 };

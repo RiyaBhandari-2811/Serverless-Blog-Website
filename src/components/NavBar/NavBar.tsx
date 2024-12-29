@@ -4,7 +4,9 @@ import {
   AppBar,
   Container,
   Drawer,
+  FormControlLabel,
   IconButton,
+  Switch,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -13,8 +15,16 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 import useNavigateTo from "../../hooks/useNavigateTo";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import CloseIcon from "@mui/icons-material/Close";
 
-const NavBar = () => {
+interface NavBarProps {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleTheme }) => {
   const navigate = useNavigateTo();
   const container =
     window !== undefined ? () => window.document.body : undefined;
@@ -28,24 +38,16 @@ const NavBar = () => {
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <AppBar position="static" component="nav">
-      <Container sx={{ display: "flex" }}>
-        <Toolbar
-          sx={{
-            justifyContent: { xs: "center", md: "flex-start" },
-            alignItems: "center",
-            flexGrow: 1,
-          }}
-        >
+    <AppBar position="static" component="nav" className="navbar" elevation={0}>
+      <Container className="container">
+        <Toolbar className="logo">
           <AdbIcon color="inherit" />
           <Typography
-            noWrap
+            className="logoText"
             component="a"
-            variant="h6"
             onClick={() => navigate("")}
-            sx={{ cursor: "pointer", userSelect: "none" }}
           >
-            Code With XYZ
+            Aher <b>Manoj</b>
           </Typography>
         </Toolbar>
         {isMdUp ? (
@@ -55,11 +57,12 @@ const NavBar = () => {
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              sx={{ display: { xs: "flex", md: "none" }, ml: "auto" }}
+              className="menuBtn"
               onClick={() => setIsDrawerOpen(!isDrawerOpen)}
             >
               <MenuIcon />
             </IconButton>
+
             <Drawer
               container={container}
               variant="temporary"
@@ -69,14 +72,31 @@ const NavBar = () => {
                 keepMounted: true,
               }}
               sx={{
-                display: { sm: "flex", md: "none" },
                 "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
               }}
               onClose={handleDrawerToggle}
+              className="drawer"
             >
+              <Toolbar sx={{ justifyContent: "space-between" }}>
+                <IconButton onClick={toggleTheme} color="inherit">
+                  {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
+                </IconButton>
+                <IconButton
+                  aria-label="close drawer"
+                  color="inherit"
+                  onClick={handleDrawerToggle}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </Toolbar>
               <NavItems />
             </Drawer>
           </>
+        )}
+        {isMdUp && (
+          <IconButton onClick={toggleTheme} color="inherit">
+            {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
+          </IconButton>
         )}
       </Container>
     </AppBar>
