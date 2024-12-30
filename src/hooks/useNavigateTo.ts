@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 /**
  * A custom hook to simplify navigation within the application.
@@ -14,7 +14,7 @@ const useNavigateTo = (): ((path: string) => void) => {
    * @param path - The path to navigate to. It will be converted to lowercase and prefixed with '/'.
    */
   const navigateTo = (path: string): void => {
-    navigate(`/${path.toLowerCase()}`);
+    navigate(path);
   };
 
   return navigateTo;

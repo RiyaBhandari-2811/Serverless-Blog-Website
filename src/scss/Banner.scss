@@ -1,43 +1,43 @@
-.banner{
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--secondary);
+  position: relative;
+  top: 64px;
+  width: 1216px;
+  height: 344px;
+  border-radius: 12px;
+  font-family: font-family-system;
+  font-weight: $font-weight-regular;
+
+  .header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: var(--secondary);
-    position: relative;
-    top: 64px;
-    width: 1216px;
-    height: 344px;
-    border-radius: 12px;
-    font-family: $font-family-lora;
-    font-weight: $font-weight-regular;
-
-    .header{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        .img{
-            width: 50px;
-            height: 50px;
-            background-color: aqua;
-            border-radius: 50%;
-        }
-
-        .role{
-            font-size: smaller;
-            font-weight: $font-weight-light;
-            color: rgba(105, 106, 117, 1);
-        }
-    }
-    .content{
-       text-align: center;
-       width: 50vw;
-       color: var(--tertiary);
+    justify-content: center;
+    gap: 16px;
+    .img {
+      width: 50px;
+      height: 50px;
+      background-color: aqua;
+      border-radius: 50%;
     }
 
-    .downloadCV{
-        background-color: var(--tertiary);
-        color: var(--primary);
+    .role {
+      font-size: smaller;
+      font-weight: $font-weight-light;
+      color: rgba(105, 106, 117, 1);
     }
+  }
+  .content {
+    text-align: center;
+    width: 50vw;
+    color: var(--tertiary);
+  }
+
+  .downloadCV {
+    background-color: var(--tertiary);
+    color: var(--primary);
+  }
 }

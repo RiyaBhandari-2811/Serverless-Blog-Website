@@ -188,7 +188,11 @@ const Tags = () => {
           key={index}
           style={{ textDecoration: "none" }}
         >
-          <Button variant="outlined" color="primary" sx={{ m: 0.4 }}>
+          <Button
+            variant="outlined"
+            color="info"
+            sx={{ m: 0.4 }}
+          >
             {tech}
           </Button>
         </Link>
