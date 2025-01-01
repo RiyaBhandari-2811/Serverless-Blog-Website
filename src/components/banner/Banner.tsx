@@ -1,24 +1,24 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Avatar, Box, Button, Grid2, Stack, Typography } from "@mui/material";
 
 const Banner = () => {
   return (
-    <Container className="banner">
-      <Container className="header">
-        <div className="img"></div>
-        <div>
+    <Grid2 container className="banner" spacing={4}>
+      <Stack className="avatarContainer">
+        <Avatar className="avatar" src="/assets/images/manoj.jpg" />
+        <Box>
           <b>Manoj Aher</b>
           <Typography className="role">Collaborator & Editor</Typography>
-        </div>
-      </Container>
-      <Container className="content">
-        <Typography component='p'>
+        </Box>
+      </Stack>
+      <Box className="content">
+        <Typography component="p">
           Meet Manoj Aher, a passionate writer and blogger with a love for
           technology and travel. Manoj holds a degree in Computer Science and
           has spent a decade working in the tech industry, gaining a deep
           understanding of the impact technology has on our lives.
         </Typography>
-      </Container>
-      <div className="socialHandles">
+      </Box>
+      <Box className="socialHandles">
         <Button
           className="downloadCV"
           variant="contained"
@@ -28,8 +28,8 @@ const Banner = () => {
         >
           Download CV
         </Button>
-      </div>
-    </Container>
+      </Box>
+    </Grid2>
   );
 };
 

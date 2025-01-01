@@ -101,7 +101,7 @@
     }
   }
 
-  @include respond(md) {
+  @include device(md) {
     .header {
       height: 50vh;
 

@@ -4,8 +4,10 @@ body.light-mode {
   --tertiary: #{$tertiary-light};
   --quaternary: #{$quaternary-light};
   --background: #{$background-light};
+  --background-blue: #{$background-blue-light};
   --text-primary: #{$text-primary-light};
   --text-secondary: #{$text-secondary-light};
+  --text-tertiary: #{$text-tertiary-light};
 }
 
 body.dark-mode {

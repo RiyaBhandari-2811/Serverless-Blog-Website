@@ -1,12 +1,13 @@
 import React from "react";
-import PortraitCard from "../components/card/PortraitCard";
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import Banner from "@/components/banner/Banner";
+import ContentRail from "@/components/contentrail/ContentRail";
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <Container className="home">
       <Banner />
+      <ContentRail />
     </Container>
   );
 };

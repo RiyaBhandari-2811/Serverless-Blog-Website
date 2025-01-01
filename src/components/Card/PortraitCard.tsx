@@ -4,29 +4,36 @@ import {
   CardContent,
   Typography,
   Card,
+  Box,
+  Stack,
 } from "@mui/material";
-import React from "react";
 
 const PortraitCard = () => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+    <Card className="portraitCard">
+      <Stack spacing={0.5} className="cardBtn">
         <CardMedia
+          className="img"
           component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="/assets/images/cardImg.png"
           alt="green iguana"
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
+        <CardContent className="cardContent">
+          <Typography className="cardTitle" gutterBottom component="span">
+            <b>SwiftUI Task Modifier Lifecycle Handling</b>
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography className="description">
             Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            species, ranging across all continents except Antarctica Lizards are
+            a widespread group of squamate reptiles, with over 6,000 species,
+            ranging across all continents except Antarctica
           </Typography>
+          <Stack className="cardFooter">
+            <Typography className="date">Auguest 20, 2022</Typography>
+            <Typography className="tag">Technology</Typography>
+          </Stack>
         </CardContent>
-      </CardActionArea>
+      </Stack>
     </Card>
   );
 };
