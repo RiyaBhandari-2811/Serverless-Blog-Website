@@ -1,4 +1,5 @@
-@use 'globals' as *;
+@use '../abstracts/fonts' as *;
+@use '../abstracts/mixins' as *;
 
 .navbar {
   margin-bottom: 3rem;
@@ -36,7 +37,7 @@
   }
 }
 
-@include device(sm) {
+@include media(sm) {
   .navbar {
     .container {
       .logo {

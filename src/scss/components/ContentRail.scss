@@ -1,6 +1,6 @@
-@use 'globals' as *;
+@use '../abstracts/fonts' as *;
+
 .contentRail {
-  
   .railHeader {
     font-family: $font-family-system;
     font-size: larger;
