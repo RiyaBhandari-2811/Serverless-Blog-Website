@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material';
 import { darkTheme, lightTheme } from '../utils/theme';
 import NavBar from '@/components/navbar/NavBar';
 import { getSystemPreference } from '@/utils/getSystemPreference';
+import Footer from '@/components/footer/Footer';
 
 const Layout = () => {
   const [isDarkMode, setIsDarkMode] = useState(getSystemPreference);
@@ -23,9 +24,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-      {/* <footer>
-        <p>Footer Content</p>
-      </footer> */}
+      <Footer />
     </ThemeProvider>
   );
 };

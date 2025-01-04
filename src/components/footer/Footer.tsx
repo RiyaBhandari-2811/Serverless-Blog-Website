@@ -1,4 +1,6 @@
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import {
   Avatar,
   Box,
@@ -8,23 +10,41 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material";
-import React from "react";
-import { Link } from "react-router-dom";
+} from '@mui/material';
 
 const Footer = () => {
   return (
-    <Box className="footer">
-      <Stack>
-        <Box>
-          <Typography variant="h6">About</Typography>
-          <Typography variant="body1">
+    <Box
+      className="footer"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'flex-start',
+      }}
+    >
+      <Stack
+        gap={5}
+        direction="row"
+        justifyContent="space-between"
+        alignItems={'flex-start'}
+      >
+        <Stack
+          justifyContent="space-between"
+          alignItems={'flex-start'}
+          sx={{
+            width: '50%',
+            display: 'inline-block',
+            textAlign: 'jestify',
+          }}
+        >
+          <Typography variant="h6" gutterBottom>
+            <b>About</b>
+          </Typography>
+          <Typography>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
-            temporibus laudantium, optio quibusdam adipisci veritatis
-            perspiciatis ab et explicabo rerum harum inventore accusantium animi
-            cumque. Quis ad sunt molestias tempora aliquam accusantium atque
-            tempore, tenetur repudiandae itaque reiciendis illo facere?
-            Similique quas quia est cupiditate enim odit odio provident modi!
+            temporibus laudantium,Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Fugiat temporibus laudantium,
           </Typography>
           <Typography variant="body1">
             <b>Email : </b> aher.manoj@outlook.com
@@ -32,14 +52,21 @@ const Footer = () => {
           <Typography variant="body1">
             <b>Phone : </b> +91 8806296026
           </Typography>
-        </Box>
-        <Box>
+        </Stack>
+        <Stack
+          justifyContent={'space-evenly'}
+          alignItems={'center'}
+          sx={{
+            width: '50%',
+            textAlign: 'jestify',
+          }}
+        >
           <Typography variant="h5">Weekly Newsletter</Typography>
           <Typography variant="h6">
             Get blog articles and offers via email!
           </Typography>
           <ul>
-            <li>No spam (unless it's the tasty canned kind).</li>
+            <li>No spam (unless it&apos;s the tasty canned kind).</li>
             <li>Cancel anytime -- no awkward breakup talk required.</li>
             <li>
               We swear, your email will remain more private than your search
@@ -64,11 +91,17 @@ const Footer = () => {
             />
             <Button variant="contained">Subscribe</Button>
           </Box>
-        </Box>
+        </Stack>
       </Stack>
       <Divider />
-      <Stack className="footer-bottom">
-        <Box>
+      <Stack
+        direction="row"
+        className="footer-bottom"
+        justifyContent={'space-between'}
+        alignItems={'center'}
+        width={'100%'}
+      >
+        <Stack direction="row" justifyContent="space-between">
           <Box>
             <Avatar src="https://avatars.githubusercontent.com/u/72213815?v=4" />
           </Box>
@@ -81,7 +114,7 @@ const Footer = () => {
               Reserved. Pune,India
             </Typography>
           </Box>
-        </Box>
+        </Stack>
         <Box>
           <Link to="/">Terms of Use</Link>
           <Link to="/">Privacy Policy</Link>
