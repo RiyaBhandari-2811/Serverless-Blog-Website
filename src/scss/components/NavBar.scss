@@ -37,7 +37,7 @@
   }
 }
 
-@include media(sm) {
+@include respond-to(sm) {
   .navbar {
     .container {
       .logo {

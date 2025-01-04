@@ -105,7 +105,7 @@
     }
   }
 
-  @include media(md) {
+  @include respond-to(md) {
     .header {
       height: 50vh;
 
