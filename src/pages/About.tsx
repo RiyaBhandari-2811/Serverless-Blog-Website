@@ -1,4 +1,4 @@
-import { Button, Container } from "@mui/material";
+import { Button, Container } from '@mui/material';
 
 const About = () => {
   return (
@@ -7,7 +7,13 @@ const About = () => {
         <span>Hi, I'm</span>
         <h2>Manoj Aher</h2>
         <span>Bengaluru, KA</span>
-        <Button className="downloadCV" variant="contained" size="medium" href="/assets/pdf/samplePdf.pdf" download="samplePdf.pdf">
+        <Button
+          className="downloadCV"
+          variant="contained"
+          size="medium"
+          href="/assets/pdf/samplePdf.pdf"
+          download="samplePdf.pdf"
+        >
           Download CV
         </Button>
       </div>

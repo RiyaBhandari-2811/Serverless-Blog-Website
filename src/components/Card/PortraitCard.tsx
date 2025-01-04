@@ -1,12 +1,5 @@
-import {
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Typography,
-  Card,
-  Box,
-  Stack,
-} from "@mui/material";
+import React from 'react';
+import { CardMedia, CardContent, Typography, Card, Stack } from '@mui/material';
 
 const PortraitCard = () => {
   return (

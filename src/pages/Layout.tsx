@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import { ThemeProvider } from "@mui/material";
-import { darkTheme, lightTheme } from "../utils/theme";
-import NavBar from "@/components/navbar/NavBar";
-import { getSystemPreference } from "@/utils/getSystemPreference";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material';
+import { darkTheme, lightTheme } from '../utils/theme';
+import NavBar from '@/components/navbar/NavBar';
+import { getSystemPreference } from '@/utils/getSystemPreference';
 
 const Layout = () => {
   const [isDarkMode, setIsDarkMode] = useState(getSystemPreference);
 
   useEffect(() => {
-    document.body.className = isDarkMode ? "dark-mode" : "light-mode";
+    document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
   }, [isDarkMode]);
 
   const toggleTheme = () => {

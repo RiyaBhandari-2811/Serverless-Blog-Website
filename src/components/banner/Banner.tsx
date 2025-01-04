@@ -1,4 +1,5 @@
-import { Avatar, Box, Button, Grid2, Stack, Typography } from "@mui/material";
+import React from 'react';
+import { Avatar, Box, Button, Grid2, Stack, Typography } from '@mui/material';
 
 const Banner = () => {
   return (

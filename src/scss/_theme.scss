@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 body.light-mode {
   --primary: #{$primary-light};
   --secondary: #{$secondary-light};
