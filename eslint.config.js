@@ -32,7 +32,6 @@ module.exports = {
     indent: ['error', 2],
     'no-unused-vars': ['warn', { args: 'none' }],
     'consistent-return': 'error',
-    'no-magic-numbers': ['error', { ignoreArrayIndexes: true }],
     'arrow-parens': ['error', 'always'],
     'prefer-const': 'error',
   },

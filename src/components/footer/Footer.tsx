@@ -14,14 +14,11 @@ import {
 
 const Footer = () => {
   return (
-    <Box
+    <Stack
       className="footer"
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        alignItems: 'flex-start',
-      }}
+      justifyContent={'space-evenly'}
+      alignItems={'flex-start'}
+      spacing={2}
     >
       <Stack
         gap={5}
@@ -33,7 +30,7 @@ const Footer = () => {
           justifyContent="space-between"
           alignItems={'flex-start'}
           sx={{
-            width: '50%',
+            width: '30%',
             display: 'inline-block',
             textAlign: 'jestify',
           }}
@@ -46,7 +43,7 @@ const Footer = () => {
             temporibus laudantium,Lorem ipsum dolor, sit amet consectetur
             adipisicing elit. Fugiat temporibus laudantium,
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" sx={{ marginTop: '1rem' }}>
             <b>Email : </b> aher.manoj@outlook.com
           </Typography>
           <Typography variant="body1">
@@ -56,16 +53,19 @@ const Footer = () => {
         <Stack
           justifyContent={'space-evenly'}
           alignItems={'center'}
+          spacing={2}
           sx={{
-            width: '50%',
-            textAlign: 'jestify',
+            width: 'max-content',
+            backgroundColor: 'white',
+            padding: '1rem',
+            borderRadius: '10px',
           }}
         >
-          <Typography variant="h5">Weekly Newsletter</Typography>
-          <Typography variant="h6">
+          <b>Weekly Newsletter</b>
+          <Typography fontSize={'1rem'}>
             Get blog articles and offers via email!
           </Typography>
-          <ul>
+          <ul style={{ fontSize: '12px' }}>
             <li>No spam (unless it&apos;s the tasty canned kind).</li>
             <li>Cancel anytime -- no awkward breakup talk required.</li>
             <li>
@@ -73,11 +73,15 @@ const Footer = () => {
               history.
             </li>
           </ul>
-          <Box>
+          <Stack
+            justifyContent={'space-evenly'}
+            alignItems={'center'}
+            spacing={2}
+          >
             <TextField
               required
               id="input-with-icon-textfield"
-              label="Your Email"
+              placeholder="Your Email"
               slotProps={{
                 input: {
                   endAdornment: (
@@ -88,12 +92,28 @@ const Footer = () => {
                 },
               }}
               variant="outlined"
+              sx={{
+                '& #input-with-icon-textfield': {
+                  padding: '4px',
+                },
+              }}
             />
-            <Button variant="contained">Subscribe</Button>
-          </Box>
+            <Button
+              disableElevation
+              sx={{
+                padding: '5px 5.6rem',
+                backgroundColor: 'var(--text-tertiary)',
+                color: 'white',
+                fontSize: '12px',
+              }}
+              variant="contained"
+            >
+              Subscribe
+            </Button>
+          </Stack>
         </Stack>
       </Stack>
-      <Divider />
+      <Divider sx={{ borderColor: 'black', width: '100%' }} />
       <Stack
         direction="row"
         className="footer-bottom"
@@ -101,7 +121,7 @@ const Footer = () => {
         alignItems={'center'}
         width={'100%'}
       >
-        <Stack direction="row" justifyContent="space-between">
+        <Stack direction="row" spacing={2} justifyContent="space-between">
           <Box>
             <Avatar src="https://avatars.githubusercontent.com/u/72213815?v=4" />
           </Box>
@@ -109,19 +129,58 @@ const Footer = () => {
             <Typography variant="body1">
               Aher <b>Manoj</b>
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body2">
               &copy; {new Date().getFullYear()}, Manoj Aher, All Rights
               Reserved. Pune,India
             </Typography>
           </Box>
         </Stack>
-        <Box>
-          <Link to="/">Terms of Use</Link>
-          <Link to="/">Privacy Policy</Link>
-          <Link to="/">Cookie Policy</Link>
-        </Box>
+        <Stack direction={'row'} spacing={2}>
+          <Link
+            to="/"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+              fontSize: 'small',
+            }}
+          >
+            Terms of Use
+          </Link>
+          <Divider
+            sx={{ borderColor: 'black' }}
+            orientation="vertical"
+            variant="middle"
+            flexItem
+          />
+          <Link
+            to="/"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+              fontSize: 'small',
+            }}
+          >
+            Privacy Policy
+          </Link>
+          <Divider
+            sx={{ borderColor: 'black' }}
+            orientation="vertical"
+            variant="middle"
+            flexItem
+          />
+          <Link
+            to="/"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
+              fontSize: 'small',
+            }}
+          >
+            Cookie Policy
+          </Link>
+        </Stack>
       </Stack>
-    </Box>
+    </Stack>
   );
 };
 

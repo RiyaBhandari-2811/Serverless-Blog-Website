@@ -15,10 +15,13 @@ $text-secondary-light: rgba(24, 26, 42, 1);
 $text-tertiary-light: rgba(75, 107, 251, 1);
 
 // Dark Mode
-$primary-dark: #90caf9;
-$secondary-dark: #f48fb1;
-$tertiary-dark: #ffb74d;
-$quaternary-dark: #81c784;
-$background-dark: #121212;
-$text-primary-dark: #ffffff;
-$text-secondary-dark: #bbbbbb;
+$primary-dark: #1a1a1a;
+$secondary-dark: rgba(28, 28, 30, 1);
+$tertiary-dark: rgba(200, 200, 210, 1);
+$quaternary-dark: rgba(75, 107, 251, 0.15);
+$background-dark: #121212; 
+$background-blue-dark: rgba(75, 107, 251, 0.15); 
+$text-primary-dark: rgba(240, 240, 245, 1); 
+$text-secondary-dark: rgba(210, 210, 220, 1); 
+$text-tertiary-dark: rgba(75, 107, 251, 1); 
+

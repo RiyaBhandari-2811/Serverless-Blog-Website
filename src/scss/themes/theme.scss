@@ -18,8 +18,10 @@ body.dark-mode {
   --tertiary: #{$tertiary-dark};
   --quaternary: #{$quaternary-dark};
   --background: #{$background-dark};
+  --background-blue: #{$background-blue-dark};
   --text-primary: #{$text-primary-dark};
   --text-secondary: #{$text-secondary-dark};
+  --text-tertiary: #{$text-tertiary-dark};
 }
 
 body {

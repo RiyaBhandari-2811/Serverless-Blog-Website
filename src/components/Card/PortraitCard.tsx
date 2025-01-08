@@ -8,7 +8,7 @@ const PortraitCard = () => {
         <CardMedia
           className="img"
           component="img"
-          image="/assets/images/cardImg.png"
+          image="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="green iguana"
         />
         <CardContent className="cardContent">
