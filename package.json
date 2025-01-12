@@ -2,6 +2,7 @@
   "name": "dynamic-blog-website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@emotion/react": "^11.14.0",

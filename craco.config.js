@@ -1,10 +1,13 @@
-const path = require("path");
+import { resolve } from "path";
 
-module.exports = {
-  webpack: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-      "@scss": path.resolve(__dirname, "src/scss"),
-    },
+console.log('Webpack alias config:', {
+  '@': resolve(__dirname, 'src'),
+  '@scss': resolve(__dirname, 'src/scss'),
+});
+
+export const webpack = {
+  alias: {
+    "@": resolve(__dirname, "src"),
+    "@scss": resolve(__dirname, "src/scss"),
   },
 };
